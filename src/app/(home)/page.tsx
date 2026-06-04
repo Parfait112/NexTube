@@ -3,6 +3,8 @@ import HomeModule from "@/modules/home/home";
 
 export default function Home() {
   return (
-    <div>bonjour</div>
+    <div>
+      <HomeModule/>
+    </div>
   );
 }
