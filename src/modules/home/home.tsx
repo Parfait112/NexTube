@@ -1,12 +1,13 @@
-'client'
+'use client'
+import { trpc } from "@/trpc/client"
 import Image from "next/image"
 
 
 function Home() {
+  const { data } = trpc.hello.useQuery({text: "Antonio"})
   return (
     <div >
-        <Image src='/images.png' width={50} height={50} alt="Logo" />
-        <p className="text-xl font-semibold tracking-tight">NewTube</p> 
+        Client Component says: {data?.greeting}
     </div>
   )
 }
