@@ -14,7 +14,7 @@ export default function Home() {
       <HydrateClient >
         <Suspense fallback={<p>Loading...</p>}>
         <ErrorBoundary fallback={<p>Error...</p>}>
-          <PageClient/>
+          <PageClient />
         </ErrorBoundary>
         </Suspense>
       </HydrateClient>
