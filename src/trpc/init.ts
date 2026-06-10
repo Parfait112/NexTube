@@ -2,7 +2,6 @@ import { auth } from '@clerk/nextjs/server';
 import { initTRPC, TRPCError } from '@trpc/server';
 import { cache } from 'react';
 import superjson from 'superjson'
-import { prisma } from '@/lib/prisma';
 import db from '@/lib/db';
 import { ratelimit } from '@/lib/ratelimite';
 
