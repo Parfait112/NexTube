@@ -77,7 +77,7 @@ export const VideoSectionSuspense = () =>{
             <InfiniteScroll
             isManual
             hasNextPage={query.hasNextPage}
-            isFetchingNextPage={query.isFetchNextPageError}
+            isFetchingNextPage={query.isFetchingNextPage}
             fetchNextPage={query.fetchNextPage}
              />
         </div>
