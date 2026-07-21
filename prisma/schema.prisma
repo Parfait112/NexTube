@@ -20,6 +20,8 @@ model User {
   created_at    DateTime  @default(now())
   updated_at    DateTime  @default(now())
 
+  videos      Videos[]
+
 
   @@map("users")
 }
@@ -30,4 +32,25 @@ model Categories{
   description     String? 
   created_at    DateTime  @default(now())
   updated_at    DateTime  @default(now())
+
+  videos      Videos[]
+}
+
+model Videos{
+  id      Int      @id @default(autoincrement())
+  title   String  
+  description  String?
+  muxStatus     String?
+  muxAssetId    String?  @unique
+  muxUploadId   String?  @unique
+  muxPlaybackId String?   @unique
+  muxTrackedId  String?    @unique
+  muxTrackStatus  String?  
+  userId   Int 
+  categoryId  Int? 
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @default(now())
+
+  User            User                @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FK_Videos_User")
+  Categories           Categories?                @relation(fields: [categoryId ], references: [id], onDelete: SetNull, map: "FK_Videos_Categories")
 }
